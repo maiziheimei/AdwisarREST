@@ -9,23 +9,21 @@
 
 package de.appsist.service.middrv.rest.server;
 
-import java.util.concurrent.ConcurrentHashMap;
-
-import org.vertx.java.core.AsyncResult;
-import org.vertx.java.core.Handler;
-import org.vertx.java.core.Vertx;
-import org.vertx.java.core.http.HttpServer;
-
 import de.appsist.service.middrv.entity.Machine;
 import de.appsist.service.middrv.rest.Constants;
 import de.appsist.service.middrv.rest.ContentType;
 import de.appsist.service.middrv.rest.ServerInformation;
-
+import org.vertx.java.core.AsyncResult;
+import org.vertx.java.core.Handler;
+import org.vertx.java.core.Vertx;
+import org.vertx.java.core.http.HttpServer;
 import org.vertx.java.core.logging.Logger;
 import org.vertx.java.core.logging.impl.LoggerFactory;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 public class RestServer {
-	private static final String name = "APPsist REST Server based on vert.x";
+	private static final String name = "Adwisar REST Server based on vert.x";
 	private static final String version = "0.2";
 	
 	private Vertx vertx;
@@ -39,8 +37,8 @@ public class RestServer {
 	 */
 	public RestServer(Vertx vertx, DataMessageHandler dataMessageHandler, SchemaHandler schemaHandler, HeartBeatHandler heartBeatHandler, String basePath, long heartBeatInterval)
 	{
-		this(vertx, dataMessageHandler, schemaHandler, heartBeatHandler, new ConcurrentHashMap<Machine,
-				SchemaTimePair>(), basePath, heartBeatInterval);
+		this(vertx, dataMessageHandler, schemaHandler, heartBeatHandler,
+				new ConcurrentHashMap<Machine, SchemaTimePair>(), basePath, heartBeatInterval);
 	}
 	
 	
@@ -95,7 +93,7 @@ public class RestServer {
 		server.requestHandler(requestHandler).listen(port, new Handler<AsyncResult<HttpServer>>(){
 				public void handle(AsyncResult<HttpServer> result){
 					if (result.succeeded())
-						logger.info("APPsist REST Server: HTTP-Transport started on \"" + "localhost"
+						logger.info("Adwisar REST Server: HTTP-Transport started on \"" + "localhost"
 						                   + "\" port " + port);
 					else
 						logger.error("Failed to start HTTP-Transport: " + result.cause());

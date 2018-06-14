@@ -1,0 +1,16 @@
+POST http://localhost:8095/resources
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-06-12T035501.404.txt
+
+###
+
+POST http://localhost:8095/resources
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-06-12T035500.404.txt
+
+###
+

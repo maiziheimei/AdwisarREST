@@ -24,8 +24,9 @@ public class WebRequestHandler implements Handler<HttpServerRequest>{
 	@Override
 	public void handle(HttpServerRequest request) {
 		HttpServerResponse response = request.response();
+		logger.info("Received request for " + request.method() + request.path());
 		de.appsist.service.middrv.rest.server.ContentParser parser = parsers.get(request.method() + request.path());
-		logger.debug("Received request for " + request.method() + request.path());
+
 
 		if (parser == null){
 			response.setStatusCode(404);

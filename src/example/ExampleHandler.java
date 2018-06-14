@@ -28,7 +28,7 @@ public class ExampleHandler implements DataMessageHandler, SchemaHandler, HeartB
 	public void handleDataMessage(DataMessage msg, HttpServerResponse response,
 								  ContentType responseContentType)
 	{
-		logger.debug("======================================================================\n"
+		logger.info("======================================================================\n"
 		                 + "===                         Got DataMessage                        ===\n"
 		                 + "======================================================================");
 
@@ -55,7 +55,7 @@ public class ExampleHandler implements DataMessageHandler, SchemaHandler, HeartB
 	public void handleNewSchema(SchemaMessage msg,
 	                            HttpServerResponse response, ContentType responseContentType)
 	{
-		logger.debug("======================================================================\n"
+		logger.info("======================================================================\n"
 		                 + "===                       Got SchemaMessage                        ===\n"
 		                 + "======================================================================");
 

@@ -4,20 +4,22 @@
 
 package de.appsist.service.middrv.rest.server;
 
-import java.util.concurrent.ConcurrentHashMap;
-
-import de.appsist.service.middrv.entity.MachineData;
-import org.vertx.java.core.http.HttpServerRequest;
-import org.vertx.java.core.http.HttpServerResponse;
-
 import de.appsist.service.middrv.entity.Machine;
+import de.appsist.service.middrv.entity.MachineData;
 import de.appsist.service.middrv.rest.ContentType;
 import de.appsist.service.middrv.rest.DataMessage;
+
+import org.vertx.java.core.http.HttpServerRequest;
+import org.vertx.java.core.http.HttpServerResponse;
+import org.vertx.java.core.logging.Logger;
+import org.vertx.java.core.logging.impl.LoggerFactory;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 class DataMessageParser implements ContentParser{
 	private DataMessageHandler handler;
 	private ConcurrentHashMap<Machine, SchemaTimePair> schemas;
-
+	private Logger logger = LoggerFactory.getLogger(DataMessageParser.class);
 	
 	public DataMessageParser(ConcurrentHashMap<Machine, SchemaTimePair> schemas, DataMessageHandler handler){
 		this.handler = handler;
@@ -35,6 +37,7 @@ class DataMessageParser implements ContentParser{
 		switch(contentType){
 		case JSON:
 			msg = DataMessage.createFromJson(schemas, new String(content));
+			logger.info("Message: "+msg);
 			break;
 		case XML:
 			msg = DataMessage.createFromXml(schemas, new String(content));

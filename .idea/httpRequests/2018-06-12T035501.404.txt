@@ -1,0 +1,17 @@
+Available handlers:
+POST/services/mid/machine/schema
+POST/services/mid/machine/data
+GET/services/mid/server/info
+GET/services/mid/client_heart_beat
+
+Content-Length: 238
+
+No handler for the requested path with the requested method.
+method:POST
+path:/resources
+
+Available handlers:
+POST/services/mid/machine/schema
+POST/services/mid/machine/data
+GET/services/mid/server/info
+GET/services/mid/client_heart_beat
