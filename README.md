@@ -4,11 +4,17 @@ This is an example project which is testing the adwisar middrv service.  It simu
 
 # How to run this example
  1. compile it 
+   ```
    $ ./compile.sh
+   ```
  2. run server
+ ```
    $ ./server.sh
+   ```
  3. run client
+ ```
    $ ./client.sh
+   ```
    
    
 
