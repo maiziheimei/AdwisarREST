@@ -1,6 +1,6 @@
 # AdwisarREST
 
-This is an example project which is testing the adwisar middrv service.  It simulates a client side to send the server with its machine, machineSchema, machineData. 
+This is an example project which is testing the adwisar middrv service.  It simulates a client to send the server with its machine, machineSchema, machineData. 
 
 ## How to run this example
  1. compile it 
